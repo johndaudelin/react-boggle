@@ -1,13 +1,35 @@
 import GameScreen from '../ui/GameScreen'
 import { connect } from 'react-redux'
+import {
+  decreaseTimer,
+  initializeScorecard,
+  initializeBoard,
+  initializeTimer,
+  addWord
+} from '../../actions'
 
 const mapStateToProps = state => {
   return {
-    board: state.board,
-    timer: state.timer,
-    scorecard: state.scorecard,
-    currentWord: state.currentWord
+    timer: state.timer
   }
 }
 
-export default connect(mapStateToProps)(GameScreen)
+const mapDispatchToProps = dispatch => ({
+  decreaseTimer () {
+    dispatch(decreaseTimer())
+  },
+  initializeBoard () {
+    dispatch(initializeBoard())
+  },
+  initializeScorecard () {
+    dispatch(initializeScorecard())
+  },
+  initializeTimer () {
+    dispatch(initializeTimer())
+  },
+  addWord () {
+    dispatch(addWord())
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameScreen)

@@ -17,10 +17,6 @@ export default class ContentScreen extends React.Component {
   }
 
   changeMode (mode) {
-    if (mode === 'game') {
-      setInterval(this.props.decreaseTimer, 1000)
-    }
-
     this.setState({
       mode
     })
@@ -33,9 +29,9 @@ export default class ContentScreen extends React.Component {
         {this.state.mode === 'welcome' ? (
           <WelcomeScreen changeMode={this.changeMode} />
         ) : this.state.mode === 'game' ? (
-          <GameScreen />
+          <GameScreen changeMode={this.changeMode} />
         ) : (
-          <FinishedScreen />
+          <FinishedScreen changeMode={this.changeMode} />
         )}
       </div>
     )

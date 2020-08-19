@@ -1,13 +1,8 @@
 import ContentScreen from '../ui/ContentScreen'
 import { connect } from 'react-redux'
-import { decreaseTimer } from '../../actions'
 
 const mapStateToProps = state => ({})
 
-const mapDispatchToProps = dispatch => ({
-  decreaseTimer () {
-    dispatch(decreaseTimer())
-  }
-})
+const mapDispatchToProps = dispatch => ({})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentScreen)
