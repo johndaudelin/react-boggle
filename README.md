@@ -1,16 +1,22 @@
 # Web Based Boggle
 
 ## Description
+
 This will be a web based Boggle game created in React.
 
 ## Demo
-I've hosted the game [here](https://web.njit.edu/~jed34/Boggle/).
 
 ## Code
 
+### Structure
+
+I followed the steps on [this blog post](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) to setup Babel, Webpack, and React from scratch.
+
 ## History
 
-Began development on May 28, 2018.
+Repository created May 28, 2018.
+
+Development began August 19, 2020.
 
 ## Authors
 
