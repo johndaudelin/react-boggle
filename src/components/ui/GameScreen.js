@@ -33,6 +33,7 @@ export default class GameScreen extends React.Component {
 
   endGame () {
     clearInterval(this.state.timeInterval)
+    this.props.resetCurrentWord()
     this.props.changeMode('finished')
   }
 

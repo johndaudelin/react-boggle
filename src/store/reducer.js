@@ -1,12 +1,12 @@
 import { Actions } from '../constants'
 import { combineReducers } from 'redux'
 
-export const currentWord = (state = '', action) => {
+export const currentWord = (state = [], action) => {
   switch (action.type) {
-    case Actions.CHANGE_CURRENT_WORD:
-      return action.payload
+    case Actions.APPEND_CURRENT_WORD:
+      return state.concat([action.payload])
     case Actions.RESET_CURRENT_WORD:
-      return ''
+      return []
     default:
       return state
   }
@@ -28,7 +28,7 @@ export const timer = (state = 180, action) => {
     case Actions.DECREASE_TIMER:
       return state - 1
     case Actions.INITIALIZE_TIMER:
-      return 180
+      return 10
     default:
       return state
   }

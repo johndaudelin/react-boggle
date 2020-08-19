@@ -5,7 +5,8 @@ import {
   initializeScorecard,
   initializeBoard,
   initializeTimer,
-  addWord
+  addWord,
+  resetCurrentWord
 } from '../../actions'
 
 const mapStateToProps = state => {
@@ -30,6 +31,9 @@ const mapDispatchToProps = dispatch => ({
   },
   addWord () {
     dispatch(addWord())
+  },
+  resetCurrentWord () {
+    dispatch(resetCurrentWord())
   }
 })
 

@@ -7,7 +7,9 @@ export const initializeScorecard = () => ({
 })
 
 export const addWord = () => (dispatch, getState) => {
-  const word = getState().currentWord
+  const word = getState()
+    .currentWord.map(index => getState().board[index])
+    .join('')
   const wordLength = word.length
 
   if (wordLength > 2) {
@@ -39,10 +41,12 @@ export const addWord = () => (dispatch, getState) => {
   }
 }
 
-export const changeCurrentWord = value => ({
-  type: Actions.CHANGE_CURRENT_WORD,
-  payload: value
-})
+export const appendToCurrentWord = char => {
+  return {
+    type: Actions.APPEND_CURRENT_WORD,
+    payload: char
+  }
+}
 
 export const resetCurrentWord = () => ({
   type: Actions.RESET_CURRENT_WORD

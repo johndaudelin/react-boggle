@@ -3,7 +3,7 @@ export const Actions = {
   INITIALIZE_BOARD: 'INITIALIZE_BOARD',
   INITIALIZE_TIMER: 'INITIALIZE_TIMER',
   DECREASE_TIMER: 'DECREASE_TIMER',
-  CHANGE_CURRENT_WORD: 'CHANGE_CURRENT_WORD',
+  APPEND_CURRENT_WORD: 'APPEND_CURRENT_WORD',
   ADD_WORD: 'ADD_WORD',
   RESET_CURRENT_WORD: 'RESET_CURRENT_WORD'
 }
@@ -11,7 +11,7 @@ export const Actions = {
 export const defaultState = {
   scorecard: [],
   board: [],
-  currentWord: '',
+  currentWord: [],
   timer: 180
 }
 
@@ -52,6 +52,6 @@ export const sampleState = {
     'A',
     'Q'
   ],
-  currentWord: 'ate',
-  timer: 120
+  currentWord: [1, 5, 4],
+  timer: 10
 }

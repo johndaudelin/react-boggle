@@ -2,7 +2,7 @@ import EntryBox from '../ui/EntryBox'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
-  currentWord: state.currentWord
+  currentWord: state.currentWord.map(index => state.board[index]).join('')
 })
 
 const mapDispatchToProps = dispatch => ({})
