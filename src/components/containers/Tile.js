@@ -33,7 +33,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     isClickable:
       clickableTiles.includes(tileIndex) &&
-      !state.currentWord.includes(tileIndex)
+      !state.currentWord.includes(tileIndex),
+    alreadyClicked: state.currentWord.includes(tileIndex)
   }
 }
 

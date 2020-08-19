@@ -53,5 +53,5 @@ export const sampleState = {
     'Q'
   ],
   currentWord: [1, 5, 4],
-  timer: 10
+  timer: 180
 }

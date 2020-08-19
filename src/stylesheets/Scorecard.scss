@@ -1,7 +1,26 @@
 @import 'globals';
 
 .scorecard {
+  width: 200px;
 }
 
 .scoreEntry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 0px;
+  width: 100%;
+}
+
+.scoreWord {
+  font-style: italic;
+}
+
+.totalScore {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-top: 1px solid grey;
+  margin-top: 5px;
+  font-weight: bold;
 }
