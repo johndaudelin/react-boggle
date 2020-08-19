@@ -10,7 +10,8 @@ import {
 
 const mapStateToProps = state => {
   return {
-    timer: state.timer
+    timer: state.timer,
+    currentWord: state.currentWord
   }
 }
 

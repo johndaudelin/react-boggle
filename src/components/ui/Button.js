@@ -3,6 +3,13 @@ import '../../stylesheets/GameScreen.scss'
 
 export default class Button extends Component {
   render () {
-    return <button onClick={this.props.onClick}>{this.props.value}</button>
+    return (
+      <button
+        disabled={this.props.disabled || false}
+        onClick={this.props.onClick}
+      >
+        {this.props.value}
+      </button>
+    )
   }
 }

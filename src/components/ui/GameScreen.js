@@ -45,7 +45,11 @@ export default class GameScreen extends React.Component {
       <div className='gameScreen'>
         <div className='timer'>{this.props.timer}</div>
         <Board />
-        <Button onClick={this.submitWord} value='Submit Word' />
+        <Button
+          onClick={this.submitWord}
+          disabled={this.props.currentWord.length < 3}
+          value='Submit Word'
+        />
         <Scorecard />
         <EntryBox />
       </div>
