@@ -9,13 +9,17 @@ export default class FinishedScreen extends React.Component {
     return (
       <div className='finishedScreen'>
         <div className='congratulations'>Congratulations! Your score is</div>
-        <FinalScore />
+        <div className='finalScoreSection'>
+          <FinalScore />
+        </div>
         <div className='scorecardLabel'>Your scorecard:</div>
         <Scorecard />
-        <Button
-          onClick={() => this.props.changeMode('game')}
-          value='Play Again'
-        />
+        <div className='playAgainButton'>
+          <Button
+            onClick={() => this.props.changeMode('game')}
+            value='Play Again'
+          />
+        </div>
       </div>
     )
   }

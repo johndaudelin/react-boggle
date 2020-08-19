@@ -2,3 +2,32 @@
 
 .finishedScreen {
 }
+
+.congratulations {
+}
+
+.finalScoreSection {
+  @extend .horizontallyCentered;
+  margin: 40px 0px;
+}
+
+.finalScoreBubble {
+  @extend .horizontallyCentered;
+  align-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 38px;
+  background-color: $soft-green;
+  border: 1px solid $dark-green;
+  font-size: 25px;
+}
+
+.scorecardLabel {
+  @extend .horizontallyCentered;
+  margin: 20px 0px;
+}
+
+.playAgainButton {
+  @extend .horizontallyCentered;
+  margin: 50px 0px;
+}

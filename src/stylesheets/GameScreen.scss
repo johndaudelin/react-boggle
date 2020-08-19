@@ -6,12 +6,11 @@
 }
 
 .entryBox {
-  width: 188px;
+  width: 220px;
   height: 30px;
   line-height: 30px;
-  border: 1px solid grey;
+  border: 1px solid $soft-grey;
   border-radius: 2px;
-  margin-top: 50px;
   padding: 5px;
 }
 
@@ -33,10 +32,8 @@
 
 .clickableTile,
 .disabledTile {
+  @extend .horizontallyCentered;
   width: 30px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
   padding: 10px 20px;
   margin: 5px;
   border: 1px solid black;
@@ -48,7 +45,7 @@
 }
 
 .clickedTile {
-  background-color: #90ee90;
+  background-color: $soft-green;
 }
 
 .clickableTile.nonhoveredTile {
@@ -56,16 +53,14 @@
 }
 
 .clickableTile.hoveredTile {
-  background-color: #cdcdcd;
+  background-color: $soft-grey;
   cursor: pointer;
 }
 
 .timer {
+  @extend .horizontallyCentered;
   margin-top: 20px;
   margin-bottom: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   width: 100%;
 }
 

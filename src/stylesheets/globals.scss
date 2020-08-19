@@ -1,0 +1,9 @@
+$soft-green: #d5e8d4;
+$dark-green: #82b366;
+$soft-grey: #cdcdcd;
+
+.horizontallyCentered {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
