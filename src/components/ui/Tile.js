@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../stylesheets/Board.scss'
+import '../../stylesheets/GameScreen.scss'
 
 export default class Tile extends Component {
   render () {

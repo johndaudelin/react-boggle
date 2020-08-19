@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../stylesheets/EntryBox.scss'
+import '../../stylesheets/GameScreen.scss'
 
 export default class EntryBox extends Component {
   render () {
