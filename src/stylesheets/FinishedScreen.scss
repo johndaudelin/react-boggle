@@ -4,11 +4,14 @@
 }
 
 .congratulations {
+  @extend .horizontallyCentered;
+  color: $text-grey;
 }
 
 .finalScoreSection {
   @extend .horizontallyCentered;
   margin: 40px 0px;
+  color: $text-grey;
 }
 
 .finalScoreBubble {
@@ -25,6 +28,7 @@
 .scorecardLabel {
   @extend .horizontallyCentered;
   margin: 20px 0px;
+  color: $text-grey;
 }
 
 .playAgainButton {

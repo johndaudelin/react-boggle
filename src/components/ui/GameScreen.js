@@ -4,6 +4,7 @@ import Board from '../containers/Board'
 import Button from './Button'
 import Scorecard from '../containers/Scorecard'
 import EntryBox from '../containers/EntryBox'
+import Timer from '../containers/Timer'
 
 export default class GameScreen extends React.Component {
   constructor (props) {
@@ -38,7 +39,7 @@ export default class GameScreen extends React.Component {
   render () {
     return (
       <div className='gameScreen'>
-        <div className='timer'>{this.props.timer}</div>
+        <Timer />
         <div className='horizontalSection'>
           <div className='leftSide'>
             <Board />

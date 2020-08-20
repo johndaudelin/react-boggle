@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@300;400;800&display=swap);
 
 .gameScreen {
+  margin-top: -50px;
 }
 
 .entryBox {
@@ -74,9 +75,15 @@
 
 .timer {
   @extend .horizontallyCentered;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin: 40px 0px;
   width: 100%;
+  font-size: 30px;
+  color: $soft-grey;
+}
+
+.timerText {
+  margin-left: 10px;
+  line-height: 30px;
 }
 
 .boardButtons {
