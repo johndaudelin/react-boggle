@@ -1,5 +1,4 @@
 @import 'globals';
-
 @import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@300;400;800&display=swap);
 
 .gameScreen {
@@ -33,28 +32,44 @@
 .clickableTile,
 .disabledTile {
   @extend .horizontallyCentered;
+  position: relative; /* For positioning the pseudo-element */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   width: 30px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 900;
   font-size: 40px;
   line-height: 40px;
   font-family: 'Didact Gothic', sans-serif;
 }
 
+.clickableTile::before,
+.disabledTile::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 500ms;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .clickedTile {
   background-color: $soft-green;
 }
 
-.clickableTile.nonhoveredTile {
-  background-color: white;
-}
-
-.clickableTile.hoveredTile {
+.clickableTile:hover {
   background-color: $soft-grey;
   cursor: pointer;
+}
+
+.clickableTile:hover::before {
+  opacity: 1;
 }
 
 .timer {
