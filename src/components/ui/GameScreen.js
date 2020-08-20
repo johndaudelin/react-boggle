@@ -59,7 +59,7 @@ export default class GameScreen extends React.Component {
           </div>
           <div className='rightSide'>
             <Scorecard />
-            <EntryBox />
+            {/*<EntryBox /> */}
           </div>
         </div>
       </div>
