@@ -8,6 +8,12 @@
   margin: 10px 20px 30px 20px;
 }
 
+.scoreCardLabel {
+  @extend .horizontallyCentered;
+  color: $text-grey;
+  margin-bottom: 15px;
+}
+
 .scoreEntry {
   display: flex;
   flex-direction: row;

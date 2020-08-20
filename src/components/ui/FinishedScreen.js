@@ -12,7 +12,6 @@ export default class FinishedScreen extends React.Component {
         <div className='finalScoreSection'>
           <FinalScore />
         </div>
-        <div className='scorecardLabel'>Your scorecard:</div>
         <Scorecard />
         <div className='playAgainButton'>
           <Button

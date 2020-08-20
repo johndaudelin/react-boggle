@@ -6,6 +6,7 @@ export default class Scorecard extends Component {
   render () {
     return (
       <div className='scorecard'>
+        <span className='scoreCardLabel'>Scorecard:</span>
         {this.props.scorecard.map((score, key) => (
           <ScoreEntry score={score} key={key} />
         ))}
