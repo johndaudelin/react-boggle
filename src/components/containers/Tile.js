@@ -1,6 +1,6 @@
 import Tile from '../ui/Tile'
 import { connect } from 'react-redux'
-import { appendToCurrentWord } from '../../actions'
+import { appendToCurrentWord, removeFromCurrentWord } from '../../actions'
 
 const mapStateToProps = (state, ownProps) => {
   const tileIndex = ownProps.index
@@ -30,17 +30,24 @@ const mapStateToProps = (state, ownProps) => {
     }
   }
 
+  const lastOneClicked = tileIndex === prevIndex
+  const alreadyClicked = state.currentWord.includes(tileIndex)
+  const clickable =
+    lastOneClicked || (clickableTiles.includes(tileIndex) && !alreadyClicked)
+
   return {
-    isClickable:
-      clickableTiles.includes(tileIndex) &&
-      !state.currentWord.includes(tileIndex),
-    alreadyClicked: state.currentWord.includes(tileIndex)
+    clickable,
+    lastOneClicked,
+    alreadyClicked
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   appendToCurrentWord () {
     dispatch(appendToCurrentWord(ownProps.index))
+  },
+  removeFromCurrentWord () {
+    dispatch(removeFromCurrentWord())
   }
 })
 

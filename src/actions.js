@@ -48,6 +48,12 @@ export const appendToCurrentWord = char => {
   }
 }
 
+export const removeFromCurrentWord = () => {
+  return {
+    type: Actions.REMOVE_FROM_CURRENT_WORD
+  }
+}
+
 export const resetCurrentWord = () => ({
   type: Actions.RESET_CURRENT_WORD
 })

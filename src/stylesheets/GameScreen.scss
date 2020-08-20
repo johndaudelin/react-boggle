@@ -64,8 +64,11 @@
   background-color: $soft-green;
 }
 
-.clickableTile:hover {
+.clickableTile:hover:not(.clickedTile) {
   background-color: $soft-grey;
+}
+
+.clickableTile:hover {
   cursor: pointer;
 }
 
