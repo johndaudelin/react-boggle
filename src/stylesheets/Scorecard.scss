@@ -1,7 +1,13 @@
 @import 'globals';
 
+.finishedScreen {
+  overflow: hidden;
+}
+
 .scorecard {
+  overflow-y: scroll;
   width: 200px;
+  height: 300px;
   border: 1px solid $soft-grey;
   border-radius: 10px;
   padding: 15px;

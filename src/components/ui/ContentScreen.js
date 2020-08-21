@@ -26,14 +26,16 @@ export default class ContentScreen extends React.Component {
   render () {
     return (
       <div className='app'>
-        <Header />
-        {this.state.mode === 'welcome' ? (
-          <WelcomeScreen changeMode={this.changeMode} />
-        ) : this.state.mode === 'game' ? (
-          <GameScreen changeMode={this.changeMode} />
-        ) : (
-          <FinishedScreen changeMode={this.changeMode} />
-        )}
+        <div>
+          <Header />
+          {this.state.mode === 'welcome' ? (
+            <WelcomeScreen changeMode={this.changeMode} />
+          ) : this.state.mode === 'game' ? (
+            <GameScreen changeMode={this.changeMode} />
+          ) : (
+            <FinishedScreen changeMode={this.changeMode} />
+          )}
+        </div>
         <LogoSection />
       </div>
     )
