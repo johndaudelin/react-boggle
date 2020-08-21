@@ -27,6 +27,23 @@
   font-style: italic;
 }
 
+.badWord {
+  text-decoration: line-through;
+  color: $dark-error;
+}
+
+.goodWord {
+  color: $dark-green;
+}
+
+.badScore {
+  color: $dark-error;
+}
+
+.goodScore {
+  color: $dark-green;
+}
+
 .totalScore {
   display: flex;
   flex-direction: row;

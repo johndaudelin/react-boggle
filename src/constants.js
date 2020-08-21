@@ -1,3 +1,24 @@
+export const TILES = [
+  'AAEEGN',
+  'ELRTTY',
+  'AOOTTW',
+  'ABBJOO',
+  'EHRTVW',
+  'CIMOTU',
+  'DISTTY',
+  'EIOSST',
+  'DELRVY',
+  'ACHOPS',
+  'HIMNQU',
+  'EEINSU',
+  'EEGHNW',
+  'AFFKPS',
+  'HLNNRZ',
+  'DEILRX'
+]
+
+export const API_KEY = '7d9f1980-6810-488c-8baf-0e61bd2dd99b'
+
 export const Actions = {
   INITIALIZE_SCORECARD: 'INITIALIZE_SCORECARD',
   INITIALIZE_BOARD: 'INITIALIZE_BOARD',
@@ -16,6 +37,7 @@ export const defaultState = {
   timer: 180
 }
 
+// For reference only. Not used in game code.
 export const sampleState = {
   scorecard: [
     {

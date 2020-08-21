@@ -4,6 +4,7 @@ import Routes from './routes'
 import storeFactory from './store'
 import { defaultState } from './constants'
 import { Provider } from 'react-redux'
+import './stylesheets/index.scss'
 
 const initialState = localStorage['redux-store']
   ? JSON.parse(localStorage['redux-store'])

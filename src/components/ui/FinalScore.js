@@ -4,8 +4,12 @@ import '../../stylesheets/GameScreen.scss'
 export default class FinalScore extends Component {
   render () {
     return (
-      <div className='finalScoreBubble'>
-        <span>{this.props.value}</span>
+      <div
+        className={`${
+          this.props.totalScore > 0 ? 'goodScoreBubble' : 'badScoreBubble'
+        }`}
+      >
+        <span>{this.props.totalScore}</span>
       </div>
     )
   }

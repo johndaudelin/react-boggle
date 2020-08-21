@@ -30,7 +30,7 @@ export const timer = (state = 180, action) => {
     case Actions.DECREASE_TIMER:
       return state - 1
     case Actions.INITIALIZE_TIMER:
-      return 180
+      return 90
     default:
       return state
   }

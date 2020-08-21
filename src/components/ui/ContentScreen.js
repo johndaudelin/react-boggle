@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from './Header'
+import LogoSection from './LogoSection'
 import WelcomeScreen from './WelcomeScreen'
 import GameScreen from '../containers/GameScreen'
-import FinishedScreen from './FinishedScreen'
+import FinishedScreen from '../containers/FinishedScreen'
 import '../../stylesheets/index.scss'
 
 export default class ContentScreen extends React.Component {
@@ -33,6 +34,7 @@ export default class ContentScreen extends React.Component {
         ) : (
           <FinishedScreen changeMode={this.changeMode} />
         )}
+        <LogoSection />
       </div>
     )
   }

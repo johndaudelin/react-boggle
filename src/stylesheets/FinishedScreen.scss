@@ -20,12 +20,22 @@
   width: 76px;
   height: 76px;
   border-radius: 38px;
+  font-size: 25px;
+}
+
+.goodScoreBubble {
+  @extend .finalScoreBubble;
   background-color: $soft-green;
   border: 1px solid $dark-green;
-  font-size: 25px;
+}
+
+.badScoreBubble {
+  @extend .finalScoreBubble;
+  background-color: $soft-error;
+  border: 1px solid $dark-error;
 }
 
 .playAgainButton {
   @extend .horizontallyCentered;
-  margin: 50px 0px;
+  margin: 25px 0px 50px 0px;
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import '../../stylesheets/GameScreen.scss'
 import Board from '../containers/Board'
 import Button from './Button'
-import Scorecard from '../containers/Scorecard'
 import EntryBox from '../containers/EntryBox'
 import Timer from '../containers/Timer'
+import WordList from '../containers/WordList'
 
 export default class GameScreen extends React.Component {
   constructor (props) {
@@ -59,7 +59,7 @@ export default class GameScreen extends React.Component {
             </div>
           </div>
           <div className='rightSide'>
-            <Scorecard />
+            <WordList />
             {/*<EntryBox /> */}
           </div>
         </div>

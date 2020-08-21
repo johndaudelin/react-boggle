@@ -8,7 +8,7 @@ export default class Timer extends Component {
     return (
       <div className='timer'>
         <FontAwesomeIcon icon={faHourglassHalf} />
-        <span class={'timerText'}>
+        <span className={'timerText'}>
           {this.props.minutes}:{this.props.seconds.toString().padStart(2, '0')}
         </span>
       </div>
