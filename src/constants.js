@@ -17,6 +17,8 @@ export const TILES = [
   'DEILRX'
 ]
 
+export const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 export const API_KEY = '7d9f1980-6810-488c-8baf-0e61bd2dd99b'
 
 export const Actions = {
@@ -24,9 +26,9 @@ export const Actions = {
   INITIALIZE_BOARD: 'INITIALIZE_BOARD',
   INITIALIZE_TIMER: 'INITIALIZE_TIMER',
   DECREASE_TIMER: 'DECREASE_TIMER',
-  APPEND_CURRENT_WORD: 'APPEND_CURRENT_WORD',
   REMOVE_FROM_CURRENT_WORD: 'REMOVE_FROM_CURRENT_WORD',
   ADD_WORD: 'ADD_WORD',
+  CHANGE_CURRENT_WORD: 'CHANGE_CURRENT_WORD',
   RESET_CURRENT_WORD: 'RESET_CURRENT_WORD'
 }
 
@@ -75,6 +77,9 @@ export const sampleState = {
     'A',
     'Q'
   ],
-  currentWord: [1, 5, 4],
+  currentWord: [
+    [1, 3],
+    [0, 7]
+  ],
   timer: 180
 }

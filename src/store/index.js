@@ -6,6 +6,7 @@ const consoleInfo = store => next => action => {
   let result
 
   console.log(`dispatching action => ${action.type}`)
+  console.log('action payload => ', action.payload)
   console.log('state', store.getState())
   result = next(action)
 

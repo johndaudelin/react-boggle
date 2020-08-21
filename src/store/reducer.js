@@ -3,8 +3,8 @@ import { combineReducers } from 'redux'
 
 export const currentWord = (state = [], action) => {
   switch (action.type) {
-    case Actions.APPEND_CURRENT_WORD:
-      return state.concat([action.payload])
+    case Actions.CHANGE_CURRENT_WORD:
+      return action.payload
     case Actions.REMOVE_FROM_CURRENT_WORD:
       return state.filter((element, index) => index !== state.length - 1)
     case Actions.RESET_CURRENT_WORD:
