@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { LETTERS } from '../../constants'
 import '../../stylesheets/GameScreen.scss'
 
 export default class Tile extends Component {
@@ -7,17 +6,6 @@ export default class Tile extends Component {
     super(props)
 
     this.handleTileAdd = this.handleTileAdd.bind(this)
-  }
-
-  handleKeyPress (event) {
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-      const char = LETTERS[event.keyCode - 65]
-      console.log(char)
-    }
-  }
-
-  componentDidMount () {
-    document.addEventListener('keydown', this.handleKeyPress, false)
   }
 
   handleTileAdd () {
