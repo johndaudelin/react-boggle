@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a web based Boggle game created in React.
+This is a single player web based Boggle game created in React.
 
 ## Setup
 
@@ -28,7 +28,7 @@ Repository created May 28, 2018.
 
 Development began August 19, 2020.
 
-Single-Player mode finished August 24, 2020.
+First complete version finished August 24, 2020.
 
 ## Authors
 
