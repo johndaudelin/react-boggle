@@ -39,6 +39,7 @@ export const addWord = () => (dispatch, getState) => {
         if (obj[0].meta) {
           obj.forEach(object => {
             if (
+              object.fl &&
               object.fl != 'abbreviation' &&
               object.fl != 'acronym' &&
               !object.fl.includes('suffix') &&
