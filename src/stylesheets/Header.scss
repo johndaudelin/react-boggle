@@ -2,8 +2,14 @@
 
 .header {
   @extend .horizontallyCentered;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  font-size: 70px;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  font-size: 8vh;
   color: $text-grey;
+}
+
+@media screen and (max-height: 500px) {
+  .header {
+    font-size: 40px;
+  }
 }

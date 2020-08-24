@@ -6,21 +6,22 @@
 .congratulations {
   @extend .horizontallyCentered;
   color: $text-grey;
+  font-size: 2vh;
 }
 
 .finalScoreSection {
   @extend .horizontallyCentered;
-  margin: 40px 0px;
+  margin: 2vh 0px 4vh 0px;
   color: $text-grey;
 }
 
 .finalScoreBubble {
   @extend .horizontallyCentered;
   align-items: center;
-  width: 76px;
-  height: 76px;
+  width: 8vh;
+  height: 8vh;
   border-radius: 38px;
-  font-size: 25px;
+  font-size: 3vh;
 }
 
 .goodScoreBubble {
@@ -37,5 +38,31 @@
 
 .playAgainButton {
   @extend .horizontallyCentered;
-  margin: 25px 0px 50px 0px;
+  margin: 5vh 0px 6vh 0px;
+}
+
+@media screen and (max-height: 1000px) {
+  .congratulations {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .congratulations {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .congratulations {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .finalScoreBubble {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
 }
