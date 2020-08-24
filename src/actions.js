@@ -34,10 +34,28 @@ export const addWord = () => (dispatch, getState) => {
     )
       .then(response => response.json())
       .then(obj => {
-        // If word is not in the dictionary, make the score for this word negative
-        if (!obj[0].meta) {
+        // If word is not in the dictionary (or is an "abbreviation" or "acronym"), make the score for this word negative
+        let badWord = true
+        if (obj[0].meta) {
+          obj.forEach(object => {
+            if (
+              object.fl != 'abbreviation' &&
+              object.fl != 'acronym' &&
+              !object.fl.includes('suffix') &&
+              !object.fl.includes('name') &&
+              object.hwi.hw.split(' ').length === 1 &&
+              object.hwi.hw[0] == object.hwi.hw[0].toLowerCase()
+            ) {
+              badWord = false
+            }
+          })
+        }
+
+        if (badWord) {
           score = 0 - score
         }
+
+        console.log(obj)
 
         dispatch({
           type: Actions.ADD_WORD,
