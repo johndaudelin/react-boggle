@@ -5,42 +5,37 @@ import { removeFromCurrentWord, changeCurrentWord } from '../../actions'
 const mapStateToProps = (state, ownProps) => {
   const tileIndex = ownProps.index
   const wordLength = state.currentWord.length
-  const prevIndexes = wordLength === 0 ? [] : state.currentWord[wordLength - 1]
+  const prevIndex = wordLength === 0 ? -1 : state.currentWord[wordLength - 1][0]
   let reachableTiles = []
 
   // All tiles are clickable if no tile has been selected yet
-  if (prevIndexes.length === 0) {
-    reachableTiles.push([...Array(16).keys()])
+  if (prevIndex === -1) {
+    reachableTiles = [...Array(16).keys()]
   } else {
-    for (let i = 0; i < prevIndexes.length; i++) {
-      const prevIndex = prevIndexes[i]
-      reachableTiles.push([])
-
-      if (prevIndex % 4 !== 3) {
-        reachableTiles[i].push(prevIndex + 1)
-        if (prevIndex > 3) reachableTiles[i].push(prevIndex - 3)
-        if (prevIndex < 11) reachableTiles[i].push(prevIndex + 5)
-      }
-      if (prevIndex % 4 !== 0) {
-        reachableTiles[i].push(prevIndex - 1)
-        if (prevIndex > 4) reachableTiles[i].push(prevIndex - 5)
-        if (prevIndex < 12) reachableTiles[i].push(prevIndex + 3)
-      }
-      if (prevIndex > 3) {
-        reachableTiles[i].push(prevIndex - 4)
-      }
-      if (prevIndex < 12) {
-        reachableTiles[i].push(prevIndex + 4)
-      }
+    if (prevIndex % 4 !== 3) {
+      reachableTiles.push(prevIndex + 1)
+      if (prevIndex > 3) reachableTiles.push(prevIndex - 3)
+      if (prevIndex < 11) reachableTiles.push(prevIndex + 5)
+    }
+    if (prevIndex % 4 !== 0) {
+      reachableTiles.push(prevIndex - 1)
+      if (prevIndex > 4) reachableTiles.push(prevIndex - 5)
+      if (prevIndex < 12) reachableTiles.push(prevIndex + 3)
+    }
+    if (prevIndex > 3) {
+      reachableTiles.push(prevIndex - 4)
+    }
+    if (prevIndex < 12) {
+      reachableTiles.push(prevIndex + 4)
     }
   }
 
-  const lastOneClicked = prevIndexes[0] === tileIndex
+  const lastOneClicked = prevIndex === tileIndex
   const alreadyClicked = state.currentWord.some(
     indexes => indexes[0] === tileIndex
   )
   const clickable =
-    lastOneClicked || (reachableTiles[0].includes(tileIndex) && !alreadyClicked)
+    lastOneClicked || (reachableTiles.includes(tileIndex) && !alreadyClicked)
 
   return {
     clickable,
