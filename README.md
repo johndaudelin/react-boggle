@@ -4,7 +4,15 @@
 
 This will be a web based Boggle game created in React.
 
-## Demo
+## Setup
+
+Clone this repository and run the following commands in the terminal:
+
+    cd react-boggle
+    npm install
+    npm start
+
+Navigate to `http://localhost:3000` and you're all set!
 
 ## Code
 
@@ -19,6 +27,8 @@ For the Redux portion, I was significantly helped by the [LinkedIn Learning cour
 Repository created May 28, 2018.
 
 Development began August 19, 2020.
+
+Single-Player mode finished August 24, 2020.
 
 ## Authors
 
