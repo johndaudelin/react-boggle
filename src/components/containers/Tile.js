@@ -35,27 +35,18 @@ const mapStateToProps = (state, ownProps) => {
     }
   }
 
-  const lastOneClicked = prevIndexes.some(prevIndex => tileIndex === prevIndex)
-  const alreadyClicked = state.currentWord.some(indexes =>
-    indexes.includes(tileIndex)
+  const lastOneClicked = prevIndexes[0] === tileIndex
+  const alreadyClicked = state.currentWord.some(
+    indexes => indexes[0] === tileIndex
   )
   const clickable =
-    lastOneClicked ||
-    (reachableTiles.some(tiles => tiles.includes(tileIndex)) && !alreadyClicked)
-
-  const reachableFromIndexes =
-    prevIndexes.length === 0
-      ? []
-      : reachableTiles
-          .filter(tiles => tiles.includes(tileIndex))
-          .map((tiles, index) => index)
+    lastOneClicked || (reachableTiles[0].includes(tileIndex) && !alreadyClicked)
 
   return {
     clickable,
     lastOneClicked,
     alreadyClicked,
-    currentWord: state.currentWord,
-    reachableFromIndexes
+    currentWord: state.currentWord
   }
 }
 

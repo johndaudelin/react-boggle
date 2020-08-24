@@ -10,23 +10,11 @@ export default class Tile extends Component {
 
   handleTileAdd () {
     let word = []
-    if (this.props.reachableFromIndexes.length === 0) {
-      word.push([this.props.index])
-    } else {
-      this.props.reachableFromIndexes.forEach(index => {
-        for (let i = 0; i < this.props.currentWord.length; i++) {
-          if (i >= word.length) {
-            word.push([this.props.currentWord[i][index]])
-          } else {
-            word[i].push(this.props.currentWord[i][index])
-          }
-        }
-      })
-      word.push([])
-      this.props.reachableFromIndexes.forEach(index => {
-        word[word.length - 1].push(this.props.index)
-      })
+
+    for (let i = 0; i < this.props.currentWord.length; i++) {
+      word.push([this.props.currentWord[i][0]])
     }
+    word.push([this.props.index])
 
     this.props.changeCurrentWord(word)
   }
