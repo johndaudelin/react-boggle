@@ -5,6 +5,7 @@ import Button from './Button'
 import EntryBox from '../containers/EntryBox'
 import Timer from '../containers/Timer'
 import WordList from '../containers/WordList'
+import { LETTERS } from '../../constants'
 
 export default class GameScreen extends React.Component {
   constructor (props) {
@@ -12,6 +13,63 @@ export default class GameScreen extends React.Component {
 
     this.state = {
       timeInterval: null
+    }
+
+    this.handleKeyPress = this.handleKeyPress.bind(this)
+  }
+
+  handleKeyPress (event) {
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+      const char = LETTERS[event.keyCode - 65]
+      const indexesOfLetter = this.props.board
+        .map((letter, index) => (letter === char ? index : -1))
+        .filter(index => index !== -1)
+      console.log('indexesOfLetter ', indexesOfLetter)
+      console.log('currentWord', this.props.currentWord)
+      console.log('reachableTiles', this.props.reachableTiles)
+
+      let word = []
+      if (this.props.currentWord.length === 0) {
+        word.push(indexesOfLetter)
+      } else {
+        for (let i = 0; i <= this.props.currentWord.length; i++) word.push([])
+
+        console.log('initial empty word ', word)
+
+        for (
+          let trackNum = 0;
+          trackNum < this.props.reachableTiles.length;
+          trackNum++
+        ) {
+          console.log(
+            'reachableTiles[trackNum] ',
+            this.props.reachableTiles[trackNum]
+          )
+          this.props.reachableTiles[trackNum].forEach(reachableTileIndex => {
+            if (indexesOfLetter.includes(reachableTileIndex)) {
+              for (
+                let wordIndex = 0;
+                wordIndex < word.length - 1;
+                wordIndex++
+              ) {
+                word[wordIndex].push(
+                  this.props.currentWord[wordIndex][trackNum]
+                )
+              }
+              word[word.length - 1].push(reachableTileIndex)
+            }
+          })
+        }
+      }
+      if (word[0].length > 0) {
+        this.props.changeCurrentWord(word)
+      }
+    } else if (event.keyCode === 8) {
+      this.props.removeFromCurrentWord()
+    } else if (event.keyCode === 13) {
+      if (this.props.currentWord.length > 2) {
+        this.props.addWord()
+      }
     }
   }
 
@@ -22,6 +80,7 @@ export default class GameScreen extends React.Component {
     this.setState({
       timeInterval: setInterval(this.props.decreaseTimer, 1000)
     })
+    document.addEventListener('keydown', this.handleKeyPress)
   }
 
   componentDidUpdate () {
@@ -33,6 +92,7 @@ export default class GameScreen extends React.Component {
   endGame () {
     clearInterval(this.state.timeInterval)
     this.props.resetCurrentWord()
+    document.removeEventListener('keydown', this.handleKeyPress)
     this.props.changeMode('finished')
   }
 

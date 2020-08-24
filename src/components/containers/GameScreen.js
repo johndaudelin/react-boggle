@@ -6,13 +6,48 @@ import {
   initializeBoard,
   initializeTimer,
   addWord,
-  resetCurrentWord
+  resetCurrentWord,
+  removeFromCurrentWord,
+  changeCurrentWord
 } from '../../actions'
 
 const mapStateToProps = state => {
+  const wordLength = state.currentWord.length
+  const prevIndexes = wordLength === 0 ? [] : state.currentWord[wordLength - 1]
+  let reachableTiles = []
+
+  // All tiles are clickable if no tile has been selected yet
+  if (prevIndexes.length === 0) {
+    reachableTiles.push([...Array(16).keys()])
+  } else {
+    for (let i = 0; i < prevIndexes.length; i++) {
+      const prevIndex = prevIndexes[i]
+      reachableTiles.push([])
+
+      if (prevIndex % 4 !== 3) {
+        reachableTiles[i].push(prevIndex + 1)
+        if (prevIndex > 3) reachableTiles[i].push(prevIndex - 3)
+        if (prevIndex < 11) reachableTiles[i].push(prevIndex + 5)
+      }
+      if (prevIndex % 4 !== 0) {
+        reachableTiles[i].push(prevIndex - 1)
+        if (prevIndex > 4) reachableTiles[i].push(prevIndex - 5)
+        if (prevIndex < 12) reachableTiles[i].push(prevIndex + 3)
+      }
+      if (prevIndex > 3) {
+        reachableTiles[i].push(prevIndex - 4)
+      }
+      if (prevIndex < 12) {
+        reachableTiles[i].push(prevIndex + 4)
+      }
+    }
+  }
+
   return {
-    timer: state.timer,
-    currentWord: state.currentWord
+    board: state.board,
+    currentWord: state.currentWord,
+    reachableTiles,
+    timer: state.timer
   }
 }
 
@@ -34,6 +69,12 @@ const mapDispatchToProps = dispatch => ({
   },
   resetCurrentWord () {
     dispatch(resetCurrentWord())
+  },
+  removeFromCurrentWord () {
+    dispatch(removeFromCurrentWord())
+  },
+  changeCurrentWord (word) {
+    dispatch(changeCurrentWord(word))
   }
 })
 
