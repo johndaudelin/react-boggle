@@ -40,6 +40,11 @@ const mapStateToProps = state => {
       if (prevIndex < 12) {
         reachableTiles[i].push(prevIndex + 4)
       }
+
+      reachableTiles[i] = reachableTiles[i].filter(
+        tileIndex =>
+          !state.currentWord.map(indexes => indexes[i]).includes(tileIndex)
+      )
     }
   }
 
