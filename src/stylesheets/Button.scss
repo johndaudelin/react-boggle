@@ -58,3 +58,13 @@
 .cancelButton:hover::before {
   opacity: 1;
 }
+
+@media screen and (max-width: 600px) {
+  .button {
+    width: 18.3vw;
+    height: 5vw;
+    padding: 1vw 1.3vw;
+    border-radius: 1.66vw;
+    font-size: 2.8vw;
+  }
+}

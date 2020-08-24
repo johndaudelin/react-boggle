@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@300;400;800&display=swap);
 
 .gameScreen {
-  margin-top: -50px;
+  margin-top: -2vh;
   margin-bottom: 75px;
 }
 
@@ -69,11 +69,6 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
-}
-
-.clickableTile,
-.disabledTile {
-  @extend .tile;
   position: relative; /* For positioning the pseudo-element */
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   width: 30px;
@@ -86,8 +81,12 @@
   font-family: 'Didact Gothic', sans-serif;
 }
 
-.clickableTile::before,
-.disabledTile::before {
+.clickableTile,
+.disabledTile {
+  @extend .tile;
+}
+
+.clickableTile::before {
   content: ' ';
   position: absolute;
   top: 0;
@@ -135,4 +134,52 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0px 24px;
+}
+
+@media screen and (max-width: 600px) {
+  .tile {
+    width: 5vw;
+    padding: 1.66vw 2.5vw;
+    margin: 0.83vw;
+    border-radius: 1.66vw;
+    font-size: 7vw;
+    line-height: 7vw;
+  }
+
+  .wordList {
+    height: 41.66vw;
+    width: 33.33vw;
+    border-radius: 1.33vw;
+    padding: 2.5vw;
+    margin: 0px 3.33vw 0px 3.33vw;
+    font-size: 3vw;
+  }
+
+  .wordListLabel {
+    margin-bottom: 1.33vw;
+  }
+
+  .wordEntry {
+    margin: 0.83vw 0px;
+  }
+
+  .entryBox {
+    width: 33.33vw;
+    border-radius: 1.33vw;
+    height: 5vw;
+    line-height: 5vw;
+    font-size: 3vw;
+    padding: 0.83vw 2.5vw;
+    margin: 3.33vw 3.33vw 0px 3.33vw;
+  }
+
+  .timerText {
+    margin-left: 1.66vw;
+    line-height: 5vw;
+  }
+
+  .timer {
+    margin: 6.66vw 0px;
+    font-size: 5vw;
+  }
 }
