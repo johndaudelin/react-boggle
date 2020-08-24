@@ -120,7 +120,7 @@ export default class GameScreen extends React.Component {
           </div>
           <div className='rightSide'>
             <WordList />
-            {/*<EntryBox /> */}
+            <EntryBox />
           </div>
         </div>
       </div>

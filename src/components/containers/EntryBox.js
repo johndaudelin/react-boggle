@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
   currentWord: state.currentWord
-    .map(index => state.board[index])
+    .map(indexes => state.board[indexes[0]])
     .join('')
     .toLowerCase()
 })
