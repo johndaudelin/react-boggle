@@ -44,6 +44,8 @@ export const addWord = () => (dispatch, getState) => {
               object.fl != 'acronym' &&
               !object.fl.includes('suffix') &&
               !object.fl.includes('name') &&
+              object.hwi?.hw &&
+              !object.hwi.hw.includes('-') &&
               object.hwi.hw.split(' ').length === 1 &&
               object.hwi.hw[0] == object.hwi.hw[0].toLowerCase()
             ) {
