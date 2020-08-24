@@ -2,7 +2,7 @@
 
 ## Description
 
-This will be a web based Boggle game created in React.
+This is a web based Boggle game created in React.
 
 ## Setup
 
