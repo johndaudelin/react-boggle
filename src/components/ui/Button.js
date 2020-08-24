@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
-import { AwesomeButton } from 'react-awesome-button'
-import styles from 'react-awesome-button/src/styles/themes/theme-flat'
-import 'react-awesome-button/dist/styles.css'
-import '../../stylesheets/GameScreen.scss'
+import '../../stylesheets/Button.scss'
 
 export default class Button extends Component {
   render () {
     return (
-      <AwesomeButton
-        cssModule={styles}
-        type={this.props.type}
-        size='medium'
-        disabled={this.props.disabled || false}
-        ripple={false}
-        action={this.props.onClick}
+      <div
+        className={`${
+          this.props.disabled
+            ? 'disabledButton'
+            : this.props.type == 'cancel'
+            ? 'cancelButton'
+            : this.props.type == 'primary'
+            ? 'primaryButton'
+            : ''
+        }`}
+        onClick={this.props.disabled ? null : this.props.onClick}
       >
         {this.props.value}
-      </AwesomeButton>
+      </div>
     )
   }
 }

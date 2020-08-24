@@ -108,7 +108,7 @@ export default class GameScreen extends React.Component {
                 onClick={this.props.resetCurrentWord}
                 disabled={this.props.currentWord.length === 0}
                 value='Cancel Word'
-                type='secondary'
+                type='cancel'
               />
               <Button
                 onClick={this.props.addWord}

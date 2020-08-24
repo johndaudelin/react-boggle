@@ -8,6 +8,7 @@ export default class WelcomeScreen extends React.Component {
       <div className='welcomeScreenButton'>
         <Button
           onClick={() => this.props.changeMode('game')}
+          type='primary'
           value='Start Game'
         />
       </div>

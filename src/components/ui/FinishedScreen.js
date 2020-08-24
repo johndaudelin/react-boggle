@@ -16,10 +16,13 @@ export default class FinishedScreen extends React.Component {
         <div className='finalScoreSection'>
           <FinalScore totalScore={this.props.totalScore} />
         </div>
-        <Scorecard totalScore={this.props.totalScore} />
+        <div className='horizontallyCentered'>
+          <Scorecard totalScore={this.props.totalScore} />
+        </div>
         <div className='playAgainButton'>
           <Button
             onClick={() => this.props.changeMode('game')}
+            type='primary'
             value='Play Again'
           />
         </div>
