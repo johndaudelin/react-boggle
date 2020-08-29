@@ -1,6 +1,6 @@
 import { Actions } from './constants'
 import fetch from 'isomorphic-fetch'
-import { API_KEY, TILES } from './constants'
+import { API_KEY, CUBES } from './constants'
 
 export const initializeScorecard = () => ({
   type: Actions.INITIALIZE_SCORECARD
@@ -104,12 +104,24 @@ export const initializeTimer = () => ({
 
 export const initializeBoard = () => {
   let tiles = []
+  shuffle(CUBES)
   for (let i = 0; i < 16; i++) {
-    tiles.push(TILES[i].charAt(Math.floor(Math.random() * 6)))
+    tiles.push(CUBES[i].charAt(Math.floor(Math.random() * 6)))
   }
 
   return {
     type: Actions.INITIALIZE_BOARD,
     payload: tiles
+  }
+}
+
+// Helper function used to shuffle boggle cubes
+// Sourced from https://javascript.info/task/shuffle
+const shuffle = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let t = array[i]
+    array[i] = array[j]
+    array[j] = t
   }
 }
