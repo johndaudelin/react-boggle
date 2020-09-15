@@ -12,7 +12,7 @@ Clone this repository and run the following commands in the terminal:
     npm install
     npm start
 
-Navigate to `http://localhost:3000` and you're all set!
+A browser window should open to `http://localhost:3000`. Happy playing!
 
 ## Code
 
